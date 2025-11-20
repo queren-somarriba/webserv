@@ -40,11 +40,12 @@ Timeouts connexion / requête
 
 Upload simple de fichiers via POST
 
-✔️ Auto-index
+✔️ Bonus
+Auto-index
 
 Affichage automatique du contenu d’un répertoire lorsque autoindex on est activé.
 
-✔️ Support CGI
+Support CGI
 
 Interprétation de scripts :
 
@@ -56,14 +57,14 @@ Variables d’environnement respectant la spec CGI
 
 Timeout CGI + gestion des erreurs
 
-✔️ Cookies & Sessions simples
+Cookies & Sessions simples
 
 Envoi / lecture de cookies
 
-Exemple d’un mini gestionnaire de session basé sur un cookie unique
+Mini gestionnaire de session basé sur un cookie unique
 
-✔️ Support upload avancé
+Support upload avancé
 
-Formulaire multipart
+Support du multipart
 
 Sauvegarde dans un dossier défini via upload_path
