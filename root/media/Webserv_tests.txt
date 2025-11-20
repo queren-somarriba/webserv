@@ -1,0 +1,116 @@
+*********** TELNET ***********
+
+GET /index.html HTTP/1.1
+Host: developer.mozilla.org
+Accept-Language: fr
+Connection: close
+
+
+------------------------------------------------------------
+GET /index.html HTTP/1.1
+Host: developer.mozilla.org
+Accept-Language: fr
+
+
+------------------------------------------------------------
+abc /index.html HTTP/1.1
+Host: developer.mozilla.org
+Accept-Language: fr
+
+
+------------------------------------------------------------
+HEAD /index.html HTTP/1.1
+Host: developer.mozilla.org
+Accept-Language: fr
+
+
+------------------------------------------------------------
+GET /index.html HTTP/1.2
+Host: developer.mozilla.org
+Accept-Language: fr
+
+
+------------------------------------------------------------
+GET /index.html
+Host: developer.mozilla.org
+Accept-Language: fr
+
+
+------------------------------------------------------------
+GET /hello.html HTTP/1.1
+Host: developer.mozilla.org
+Accept-Language: fr
+
+
+------------------------------------------------------------
+GET /lol/ HTTP/1.1
+Host: developer.mozilla.org
+Accept-Language: fr
+
+
+------------------------------------------------------------
+DELETE /test.txt HTTP/1.1
+Host: developer.mozilla.org
+Accept-Language: fr 
+
+
+------------------------------------------------------------
+POST /example.txt HTTP/1.1
+Host: Webserv
+Content-Type: text
+Content-Length: 19
+
+hello salut hola
+
+
+------------------------------------------------------------
+POST / HTTP/1.1
+Host: Webserv
+Content-Type: text/plain
+Content-Length: 19
+
+hello post test 2 2 2
+
+
+------------------------------------------------------------
+POST /img/testchunk.txt HTTP/1.1
+Host: Webserv
+Content-Type: text/plain
+Transfer-Encoding: chunked
+
+27
+Voici les données du premier morceau
+
+1C
+et voici un second morceau
+
+20
+et voici deux derniers morceaux 
+12
+sans saut de ligne
+0
+
+
+
+*********** CURL ***********
+
+curl -v --http1.1 \
+  -X POST "http://localhost:8090/aa.mp3" \
+  -H "Transfer-Encoding: chunked" \
+  -H "Expect:" \
+  -H "Content-Length:" \
+  --data-binary @./audio2.mp3
+
+
+curl -X POST -F"chat.gif=@cat.gif" -F"vv.mp4=@vid1.mp4" localhost:8090 & curl -X POST -F "aa.mp3=@audio2.mp3" http://localhost:8090
+
+
+curl http://localhost:8090/ &
+curl http://localhost:8090/ &
+curl http://localhost:8090/ &
+curl http://localhost:8090/ &
+curl http://localhost:8090/ &
+curl http://localhost:8090/ &
+curl http://localhost:8090/ &
+curl http://localhost:8090/ &
+curl http://localhost:8090/
