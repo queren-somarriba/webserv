@@ -17,7 +17,7 @@
 /*****************	CANONICAL + PARAMETRIC CONSTRUCTOR 	*******************/
 Server::Server(): Webserv(), _locations(), _config(), _error_pages(), _cgis() {} 
 
-Server::Server(const Server& srcs)
+Server::Server(const Server& srcs) : Webserv(srcs)
 {
 	*this = srcs;
 }

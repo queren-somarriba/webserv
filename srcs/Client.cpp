@@ -21,7 +21,7 @@ Client::Client() : Server(),  _server_fd(), _count(), _request(), _response(), _
 	this->_timeout = std::time(0);
 }
 
-Client::Client(const Client &srcs)
+Client::Client(const Client &srcs) : Server(srcs)
 {
 	*this = srcs;
 }
@@ -272,7 +272,7 @@ void	Client::send_answer()
 			clearClient();
 			return ;
 		}
-		size_t sent = send(_pfds[this->_index].fd, this->_response->getResponseMsg().c_str() + this->_count, msg_len - this->_count, MSG_NOSIGNAL);
+		ssize_t sent = send(_pfds[this->_index].fd, this->_response->getResponseMsg().c_str() + this->_count, msg_len - this->_count, MSG_NOSIGNAL);
 		if (sent < 0)
 		{
 			std::cerr << BOLD << RED << "[" << RESET << this->_index << BOLD <<RESET << "] Error: send, connection closed.\n" << RESET;

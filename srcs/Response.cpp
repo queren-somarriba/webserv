@@ -21,7 +21,7 @@ std::map<std::string, std::string> Response::_types = makeTypesMap();
 
 Response::Response() : Request(), _response_msg(), _fileName(), _responseBody(), _autoIndex() {}
 
-Response::Response(const Response &src)
+Response::Response(const Response &src) : Request(src)
 {
 	*this = src;
 }

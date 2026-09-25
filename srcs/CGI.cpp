@@ -18,7 +18,7 @@
 
 CGI::CGI() : Request(), _varEnv(), _In(), _Out(), _PID() {}
 
-CGI::CGI(const CGI &src)
+CGI::CGI(const CGI &src) : Request(src)
 {
 	*this = src;
 }

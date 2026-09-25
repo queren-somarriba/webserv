@@ -16,7 +16,7 @@
 
 Location::Location() : Server(){}
 
-Location::Location(const Location &srcs)
+Location::Location(const Location &srcs) : Server(srcs)
 {
 	*this = srcs;
 }

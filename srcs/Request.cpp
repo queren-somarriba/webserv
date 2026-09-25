@@ -22,7 +22,7 @@ Request::Request() : Client(), _headers_len(), _request_line_len(), _body_len(),
 _protocol(), _responseStatus("200"), _isCGI(), _CGI_bin_path(), _CGI_script(), _CGI_pathInfo(), _CGI_querry(), _CGIinterpret(),
 _cookies(), _session_id() {}
 
-Request::Request(const Request &src)
+Request::Request(const Request &src) : Client(src)
 {
 	*this = src;
 }
